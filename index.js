@@ -6,12 +6,14 @@ const schema = buildSchema(`
   type Query {
     hello: String,
     test: String,
+    date: String,
   }
 `);
 
 const root = {
   hello: () => 'Hello World!',
   test: () => 'Testing',
+  date: () => new Date(),
 };
 
 const app = express();
