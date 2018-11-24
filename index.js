@@ -5,10 +5,14 @@ const { buildSchema } = require('graphql');
 const schema = buildSchema(`
   type Query {
     hello: String,
+    test: String,
   }
 `);
 
-const root = { hello: () => 'Hello World!' };
+const root = {
+  hello: () => 'Hello World!',
+  test: () => 'Testing',
+};
 
 const app = express();
 app.use('/graphql', graphqlHTTP({
